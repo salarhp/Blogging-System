@@ -1,0 +1,82 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Posts | rBlog</title>
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top ">
+
+      <a class="navbar-brand" href="#">rBlog</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="posts.html">Posts </a></li>
+          <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="users.html">Users</a></li>
+        </ul>
+        <form class="form-inline navbar-right">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <section>
+        <br/>
+        <br/>
+        <br/>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well">
+                        <h2 class="page-header">New post <a href="news.html" class="btn btn-success" >Add new</a></h2>
+                        <form class="needs-validation" novalidate>
+                            <div class="mb-3">
+                            <label for="firstName">title</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email">category </label>
+                                <input type="text" class="form-control" id="email">
+                                <div class="invalid-feedback">
+                                Please enter a valid email address for shipping updates.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="address">body</label>
+                                <textarea id="address" class="form-control"></textarea>
+                                <div class="invalid-feedback">
+                                Please enter your message.
+                                </div>
+                            </div>
+
+                            <hr class="mb-4">
+                            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p class="center">Copyright &copy; 2018,sBlog | <a href="login.html">Admin Login</a></p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="../js/bootstrap.js"></script>
+  </body>
+</html>
