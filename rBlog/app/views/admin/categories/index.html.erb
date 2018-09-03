@@ -1,2 +1,13 @@
-<h1>Admin::Categories#index</h1>
-<p>Find me in app/views/admin/categories/index.html.erb</p>
+<h2 class="page-header">Manage Categories  <%= link_to "Create New", new_admin_category_path ,class: "btn btn-success" %> </h2>
+<table class="table table-striped">
+    <tr>
+        <th>Category title </th>
+        <th>actions</th>
+    </tr>
+    <% @categories.each do |category| %>
+        <tr>
+            <td>Categories 1111</td>
+            <td><a href="#" class="btn btn-primary">edit</a><a href="#" class="btn btn-danger">delete</a></td>
+        </tr>
+    <%end%>
+</table>
