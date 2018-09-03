@@ -2,12 +2,14 @@
 <table class="table table-striped">
     <tr>
         <th>Category title </th>
+        <th>create date</th>
         <th>actions</th>
     </tr>
     <% @categories.each do |category| %>
         <tr>
-            <td>Categories 1111</td>
-            <td><a href="#" class="btn btn-primary">edit</a><a href="#" class="btn btn-danger">delete</a></td>
+            <td> <%= category.name %> </td>
+            <td> <%= category.created_at.to_time.strftime('%B %e at %l:%M %p') %> </td>
+            <td> <%= link_to "Edit", edit_admin_category_path(category),class:'btn btn-primary' %> <%= link_to "Delete", admin_category_path(category),class:'btn btn-danger', method: :delete, data: {confirm: 'are you sure?'} %> </td>
         </tr>
     <%end%>
 </table>
