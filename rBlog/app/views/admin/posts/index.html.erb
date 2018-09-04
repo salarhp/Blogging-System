@@ -10,7 +10,7 @@
         </tr>
         <% @posts.each do |post| %>
             <tr>
-                <td> <%= post.name %> </td>
+                <td> <%= post.title %> </td>
                 <td> <%= post.category.name %>
                 <td> <%= post.created_at.to_time.strftime('%B %e at %l:%M %p') %> </td>
                 <td> <%= link_to "Edit", edit_admin_post_path(post),class:'btn btn-primary' %> <%= link_to "Delete", admin_post_path(post),class:'btn btn-danger', method: :delete, data: {confirm: 'are you sure?'} %> </td>
