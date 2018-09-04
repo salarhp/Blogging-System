@@ -5,8 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'admin/application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'admin/application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top ">
@@ -22,10 +22,7 @@
           <li class="nav-item <%= params[:controller] == 'admin/categories' ? 'active' : '' %>"><%= link_to "Categories", admin_categories_path ,class:"nav-link" %></li>
           <li class="nav-item <%= params[:controller] == 'admin/users' ? 'active' : '' %>"><%= link_to "Users", admin_users_path ,class:"nav-link" %></li>
         </ul>
-        <form class="form-inline navbar-right">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <%= render 'partials/admin/search' %>
       </div>
     </nav>
     <section>
