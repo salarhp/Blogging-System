@@ -1,2 +1,14 @@
-<h1>Admin::Sessions#new</h1>
-<p>Find me in app/views/admin/sessions/new.html.erb</p>
+<%= form_tag admin_sessions_path, :calss => 'form-signin' do %>
+    <h2 class="form-signin-heading">rblog</h2>
+    <% if flash[:notice] %>
+        <div class="alert alert-success"><%=flash[:notice]%>
+    <%end%>
+    <% if flash[:alert] %>
+        <div class="alert alert-success"><%=flash[:alert]%>
+    <%end%>
+    <%=text_field_tag :email, "",class:'form-control',placeholder: 'email address' %>
+    <%= password_field_tag :password, '',class: 'form-control',placeholder: 'password' %>
+	</p>
+	<%= submit_tag "log in", class:'btn btn-lg btn-primary btn-block' %>
+
+<% end %>

@@ -1,0 +1,39 @@
+<div class= "comments">
+    <h2 class="page-header"><%= @post.comments.length %> comments</h2>
+    <% @post.comments.each do |comment| %>
+    <div class= "comment">
+        <div class = "row">
+            <div class = "col-md-2">
+                <%= image_tag ("user.jpg") %>
+            </div>
+            <div class = "col-md-10">
+                <div class="well">
+                        <h4> <%= comment.name %> <span>/</h4> <%= comment.created_at.to_time.strftime('%B %e at %l:%M %p') %> </span>
+                        <%= raw comment.body.truncate(200) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% end %>
+
+    <div class="well add-comment">
+        <h2>add comment</h2>
+        <%= form_for([@post,@post.comments.build]) do |f|%>
+            <div class = "from-group">
+		        <%= f.label :name %>
+		        <%= f.text_field :name ,class: 'form-control'%>
+	        </div>
+            <div class = "from-group">
+		        <%= f.label :email %>
+		        <%= f.text_field :email ,class: 'form-control'%>
+	        </div>
+            <div class = "from-group">
+                <%= f.label :body %>
+                <%= f.text_area :body, class: 'form-control', id: 'froala-editor' %>
+            </div>
+	        <div class = "from-group">
+		        <%= f.submit "submit", class:'btn btn-primary' %>
+            </div>
+        <%end%>
+    </div>
+</div>
