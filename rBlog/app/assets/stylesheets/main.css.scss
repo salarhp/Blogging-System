@@ -84,6 +84,17 @@ body{
     padding: 0;
 }
 
+small{
+    color: #fff;
+    display: block;
+    margin: 10px 0;
+    padding: 5px 10px;
+}
+
+.post .btn{
+    display: block;
+}
+
 footer{
     background: #36424a;
     color: #fff;
@@ -100,5 +111,9 @@ footer{
 .btn:hover{
     background: #ccc;
     color: #666;
+}
+
+.comments img{
+    width: 100%;
 }
 
