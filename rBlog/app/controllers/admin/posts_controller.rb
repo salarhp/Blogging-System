@@ -1,4 +1,5 @@
 class Admin::PostsController < Admin::ApplicationController
+  before_action :verify_logged_in
   def new
     @page_title = 'Add post'
     @post = Post.new
@@ -6,6 +7,11 @@ class Admin::PostsController < Admin::ApplicationController
 
   def create
     @post = Post.new(post_params)
+
+    if params[:post][:image].blank?
+      @post.image = nil
+    end
+
     if @post.save
       flash[:notice]="post created"
       redirect_to admin_posts_path
@@ -20,6 +26,11 @@ class Admin::PostsController < Admin::ApplicationController
 
   def update
     @post = Post.find(params[:id])
+
+    if params[:post][:image].blank?
+      @post.image = nil
+    end
+
     if @post.update(post_params)
       flash[:notice]="post updated"
       redirect_to admin_posts_path
